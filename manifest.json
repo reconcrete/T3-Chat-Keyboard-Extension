@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "T3 Chat Keyboard Navigation",
+  "version": "1.0",
+  "description": "Enhances keyboard accessibility on T3 Chat",
+  "content_scripts": [
+    {
+      "matches": ["https://t3.chat/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
