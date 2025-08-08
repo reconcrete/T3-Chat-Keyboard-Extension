@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "node scripts/build.mjs",
-    "dev": "node scripts/build.mjs --watch"
+    "build": "bun scripts/build.ts",
+    "dev": "bun scripts/build.ts --watch"
   },
   "devDependencies": {
-    "esbuild": "^0.21.5",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "bun-types": "^1.1.17"
   }
 }

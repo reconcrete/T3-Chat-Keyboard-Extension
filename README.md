@@ -14,25 +14,24 @@ Enhances keyboard accessibility and introduces a lightweight command palette for
 
 Requirements:
 
-- Node.js (LTS recommended)
+- Bun (latest recommended)
 - Chrome or other browser that supports Chrome extensions
 
 Steps:
 
 1. Install dependencies:
    ```bash
-   npm install
+   bun install
    ```
 2. Build (outputs to `dist/`):
    ```bash
-   npm run build
+   bun run build
    ```
    Or run in watch mode during development:
    ```bash
-   npm run dev
+   bun run dev
    ```
 3. Load in Chrome:
    - Open `chrome://extensions` (or other bowser).
    - Enable "Developer mode" (top right).
    - Click "Load unpacked" and select the `dist` folder.
-
