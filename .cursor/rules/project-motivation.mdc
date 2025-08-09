@@ -1,0 +1,24 @@
+---
+alwaysApply: true
+description: Project motivation for T3 Chat Keyboard Extension (from README)
+---
+
+### Motivation
+
+Enhance keyboard accessibility and introduce a lightweight, VS Code–inspired command palette for T3 Chat — an AI chat that lets you make requests to providers like OpenAI, Google, and Anthropic. This enables fast, keyboard-first navigation and command-driven actions.
+
+### Scope
+
+- Runs only on T3 Chat
+- Built with TypeScript and Chrome Extension Manifest V3
+- See more in [README.md](mdc:README.md)
+
+### Core Ideas
+
+- Keyboard-first navigation on T3 Chat
+- Simple command palette concept so you can write commands to trigger actions
+
+### Current Behaviors
+
+- When the T3 Chat search input is focused, pressing Arrow Down moves focus to the first menu item
+- Pressing Command+Shift+K inserts a `>` into the active input to begin a command
