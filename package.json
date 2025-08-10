@@ -11,5 +11,8 @@
   "devDependencies": {
     "typescript": "^5.5.4",
     "bun-types": "^1.1.17"
+  },
+  "dependencies": {
+    "@types/jquery": "^3.5.32"
   }
 }

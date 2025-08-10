@@ -15,9 +15,9 @@ async function copyStaticAssets(): Promise<void> {
 async function buildScripts(): Promise<void> {
   if (isWatch) {
     // Watch mode keeps the process alive
-    await $`bun build src/content.ts --outdir dist --format iife --target=browser --watch --sourcemap`;
+    await $`bun build src/main.ts --outdir dist --format iife --target=browser --watch --sourcemap`;
   } else {
-    await $`bun build src/content.ts --outdir dist --format iife --target=browser --minify`;
+    await $`bun build src/main.ts --outdir dist --format iife --target=browser --minify`;
   }
 }
 
