@@ -1,4 +1,31 @@
-export function comandPalette(): void {
+const buttons = [
+  {
+    text: "Open Settings",
+    action: () => {
+      const settingsAnchor = document.querySelector<HTMLElement>('a[aria-label="Go to settings"][data-state]');
+
+      if (settingsAnchor) {
+        settingsAnchor.click();
+      }
+    },
+  },
+  {
+    text: "Toggle Theme",
+    action: () => {
+      const settingsAnchor = document.querySelector<HTMLElement>('a[aria-label="Go to settings"][data-state]');
+      const toggleThemeButton = settingsAnchor?.nextElementSibling;
+
+      if (toggleThemeButton && toggleThemeButton instanceof HTMLElement) {
+        toggleThemeButton.click();
+      }
+    },
+  },
+  { text: "Delete Current Thread", action: () => {
+    
+  } },
+];
+
+export function runComandPalette(): void {
   document.addEventListener("keydown", (event) => {
     if (event.metaKey && event.shiftKey && event.key.toLowerCase() === "k") {
       event.stopImmediatePropagation();
@@ -45,18 +72,12 @@ export function comandPalette(): void {
         gap: 8px;
       `;
 
-      // Create buttons
-      const buttons = [
-        {
-          text: "Open Settings",
-          action: () => {
-            console.log("Open Settings");
-            location.href = "/settings/customization";
-          },
-        },
-        { text: "Delete Current Thread", action: () => {} },
-        { text: "Toggle Theme", action: () => {} },
-      ];
+      // Function to safely remove overlay
+      const removeOverlay = () => {
+        if (overlay.parentNode) {
+          overlay.parentNode.removeChild(overlay);
+        }
+      };
 
       buttons.forEach(({ text, action }) => {
         const button = document.createElement("button");
@@ -81,8 +102,8 @@ export function comandPalette(): void {
         });
 
         button.addEventListener("click", () => {
+          removeOverlay();
           action();
-          document.body.removeChild(overlay);
         });
 
         buttonsContainer.appendChild(button);
@@ -91,14 +112,14 @@ export function comandPalette(): void {
       // Close on overlay click
       overlay.addEventListener("click", (e) => {
         if (e.target === overlay) {
-          document.body.removeChild(overlay);
+          removeOverlay();
         }
       });
 
       // Close on Escape key
       const handleEscape = (e: KeyboardEvent) => {
         if (e.key === "Escape") {
-          document.body.removeChild(overlay);
+          removeOverlay();
           document.removeEventListener("keydown", handleEscape);
         }
       };
