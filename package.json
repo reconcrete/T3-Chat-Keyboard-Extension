@@ -13,6 +13,12 @@
     "bun-types": "^1.1.17"
   },
   "dependencies": {
-    "@types/jquery": "^3.5.32"
+    "@radix-ui/react-dialog": "^1.1.14",
+    "@types/jquery": "^3.5.32",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "lucide-react": "^0.539.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   }
 }

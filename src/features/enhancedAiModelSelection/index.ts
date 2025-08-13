@@ -1,4 +1,4 @@
-import { modelFirstMenuItemSelector, modelSearchInputSelector } from "../../elements/selectors";
+import { modelFirstMenuItemSelector, modelSearchInputSelector } from "../../shared/selectors";
 
 export function runEnhancedAiModelSelection(): void {
   document.addEventListener("keydown", (event) => {
