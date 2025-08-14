@@ -1,3 +1,6 @@
+export const chatTextareaSelector = 'textarea[aria-label="Message input"]';
+
+export const openModelSearchButtonSelector = 'button[id="radix-:r8:"]';
 export const modelSearchInputSelector = 'input[role="searchbox"][aria-label="Search threads"]';
 export const modelFirstMenuItemSelector = 'div[data-radix-menu-content] div[role="menuitem"]';
 
