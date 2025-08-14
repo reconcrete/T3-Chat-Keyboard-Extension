@@ -9,3 +9,5 @@ export const threadsSearchTextareaSelector = 'textarea[aria-label="Search thread
 export const threadsSearchListSelector = 'div.pointer-events-auto:has(textarea[aria-label="Search threads and messages"]) ul';
 export const threadsSearchRecentChatsLabelSelector = 'div.pointer-events-auto:has(textarea[aria-label="Search threads and messages"]) div:contains("Recent Chats")';
 export const threadsSearchItems = 'div.pointer-events-auto:has(textarea[aria-label="Search threads and messages"]) li';
+
+export const settingsAnchorSelector = 'a[aria-label="Go to settings"][data-state]';

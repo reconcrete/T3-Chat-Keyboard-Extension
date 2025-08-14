@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Search, Slash, Plus, Clock } from "lucide-react";
+import { settingsAnchorSelector } from "@/shared/selectors";
 
 type CommandButton = {
   text: string;
@@ -38,14 +39,14 @@ function CommandPalette(): React.ReactElement {
       {
         text: "Open Settings",
         action: () => {
-          const settingsAnchor = document.querySelector<HTMLElement>('a[aria-label="Go to settings"][data-state]');
+          const settingsAnchor = document.querySelector<HTMLElement>(settingsAnchorSelector);
           settingsAnchor?.click();
         },
       },
       {
         text: "Toggle Theme",
         action: () => {
-          const settingsAnchor = document.querySelector<HTMLElement>('a[aria-label="Go to settings"][data-state]');
+          const settingsAnchor = document.querySelector<HTMLElement>(settingsAnchorSelector);
           const toggleThemeButton = settingsAnchor?.nextElementSibling;
           if (toggleThemeButton && toggleThemeButton instanceof HTMLElement) {
             toggleThemeButton.click();
@@ -53,10 +54,16 @@ function CommandPalette(): React.ReactElement {
         },
       },
       {
-        text: "Delete Current Thread",
+        text: "Toggle Sidebar",
         action: () => {
-          // Not implemented yet – left as a placeholder
-          console.debug("Delete Current Thread: action not implemented");
+          const event = new KeyboardEvent("keydown", {
+            key: "b",
+            code: "KeyB",
+            metaKey: true,
+            bubbles: true,
+            cancelable: true,
+          });
+          document.dispatchEvent(event);
         },
       },
     ],
