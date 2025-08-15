@@ -1,10 +1,5 @@
 import { wait } from "@/shared/lib/common";
-import {
-  chatTextareaSelector,
-  modelFirstMenuItemSelector,
-  modelSearchInputSelector,
-  openModelSearchButtonSelector,
-} from "../../shared/selectors";
+import { modelFirstMenuItemSelector, modelSearchInputSelector } from "../../shared/selectors";
 
 export function runEnhancedAiModelSelection(): void {
   document.addEventListener(

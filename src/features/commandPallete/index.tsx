@@ -106,7 +106,11 @@ function CommandPalette(): React.ReactElement {
         <DialogTitle>Command Palette</DialogTitle>
       </VisuallyHidden>
 
-      <DialogContent aria-describedby="command-palette-description" aria-description="Command Palette" showCloseButton>
+      <DialogContent aria-describedby="command-palette-description" showCloseButton>
+        <div id="command-palette-description" className="sr-only">
+          A command palette for quick access to T3 Chat features and actions
+        </div>
+
         <div className="pointer-events-auto absolute -top-16 flex h-fit w-full flex-col gap-1 rounded-xl bg-popover p-3.5 pt-2.5 text-secondary-foreground shadow-2xl outline outline-1 outline-chat-border/20 backdrop-blur-md max-sm:inset-x-4 max-sm:w-auto dark:outline-white/5">
           <div className="relative">
             <div className="w-full rounded-t-lg bg-popover">
