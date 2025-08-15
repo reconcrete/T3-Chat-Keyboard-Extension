@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "bun scripts/build.ts",
-    "dev": "bun scripts/build.ts --watch"
+    "dev": "bun scripts/build.ts --watch",
+    "zip": "zip -r t3-chat-keyboard-extension.zip dist"
   },
   "devDependencies": {
     "typescript": "^5.5.4",
