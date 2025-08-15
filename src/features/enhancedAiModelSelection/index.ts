@@ -14,7 +14,13 @@ export function runEnhancedAiModelSelection(): void {
 
       if (event.key === "ArrowDown" && activeElement instanceof Element) {
         if (event.ctrlKey && event.shiftKey) {
-          const openModelSearchButton = document.querySelector<HTMLElement>(openModelSearchButtonSelector);
+          const allButtons = document.querySelectorAll<HTMLButtonElement>("button");
+
+          const openModelSearchButton = Array.from(allButtons).find((button) => {
+            const modalNameDiv = button.querySelector("div[class*='text-left text-sm font-medium']");
+            const svg = button.querySelector('svg[class*="lucide-chevron-down"]');
+            return modalNameDiv && svg && svg.querySelector('path[d="m6 9 6 6 6-6"]');
+          });
 
           if (openModelSearchButton) {
             event.preventDefault();
