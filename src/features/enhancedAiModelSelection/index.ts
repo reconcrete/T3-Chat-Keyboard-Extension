@@ -13,7 +13,7 @@ export function runEnhancedAiModelSelection(): void {
       const activeElement = document.activeElement;
 
       if (event.key === "ArrowDown" && activeElement instanceof Element) {
-        if (event.ctrlKey && event.shiftKey && activeElement.matches(chatTextareaSelector)) {
+        if (event.ctrlKey && event.shiftKey) {
           const openModelSearchButton = document.querySelector<HTMLElement>(openModelSearchButtonSelector);
 
           if (openModelSearchButton) {

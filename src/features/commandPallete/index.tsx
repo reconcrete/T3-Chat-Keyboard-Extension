@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Search, Slash, Plus, Clock } from "lucide-react";
-import { settingsAnchorSelector } from "@/shared/selectors";
+import { cancelMessageButtonSelector, settingsAnchorSelector } from "@/shared/selectors";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 type CommandButton = {
@@ -55,6 +55,29 @@ function CommandPalette(): React.ReactElement {
         },
       },
       {
+        text: "Stop Response",
+        action: () => {
+          const cancelMessageButton = document.querySelector<HTMLElement>(cancelMessageButtonSelector);
+          if (cancelMessageButton) {
+            cancelMessageButton.click();
+          }
+        },
+      },
+      {
+        text: "Select Model",
+        action: () => {
+          const event = new KeyboardEvent("keydown", {
+            key: "ArrowDown",
+            code: "ArrowDown",
+            ctrlKey: true,
+            shiftKey: true,
+            bubbles: true,
+            cancelable: true,
+          });
+          document.dispatchEvent(event);
+        },
+      },
+      {
         text: "Toggle Sidebar",
         action: () => {
           const event = new KeyboardEvent("keydown", {
@@ -83,7 +106,7 @@ function CommandPalette(): React.ReactElement {
         <DialogTitle>Command Palette</DialogTitle>
       </VisuallyHidden>
 
-      <DialogContent aria-describedby="command-palette-description" showCloseButton>
+      <DialogContent aria-describedby="command-palette-description" aria-description="Command Palette" showCloseButton>
         <div className="pointer-events-auto absolute -top-16 flex h-fit w-full flex-col gap-1 rounded-xl bg-popover p-3.5 pt-2.5 text-secondary-foreground shadow-2xl outline outline-1 outline-chat-border/20 backdrop-blur-md max-sm:inset-x-4 max-sm:w-auto dark:outline-white/5">
           <div className="relative">
             <div className="w-full rounded-t-lg bg-popover">

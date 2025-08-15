@@ -11,3 +11,5 @@ export const threadsSearchRecentChatsLabelSelector = 'div.pointer-events-auto:ha
 export const threadsSearchItems = 'div.pointer-events-auto:has(textarea[aria-label="Search threads and messages"]) li';
 
 export const settingsAnchorSelector = 'a[aria-label="Go to settings"][data-state]';
+
+export const cancelMessageButtonSelector = 'button[aria-label="Cancel message"]';
